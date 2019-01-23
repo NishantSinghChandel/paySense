@@ -39,7 +39,10 @@ export default class signup extends Component {
 		});
 	};
 	handleSubmitClick = () => {
-		if (this.state.password !== this.state.confirmPassword) {
+		if (
+			this.state.password.trim().length > 0 &&
+			this.state.password !== this.state.confirmPassword
+		) {
 			alert("Retype password doesn't match");
 		} else {
 			let authorisedUser = [

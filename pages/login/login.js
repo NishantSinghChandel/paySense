@@ -68,7 +68,7 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="page-login">
-				<div>
+				<form>
 					<input
 						type="email"
 						value={this.state.username}
@@ -84,12 +84,13 @@ class Login extends Component {
 						required
 					/>
 					<button
+						type="submit"
 						className="btn btn-primary"
 						onClick={() => this.handleSubmitClick()}
 					>
 						Submit
 					</button>
-				</div>
+				</form>
 			</div>
 		);
 	}
