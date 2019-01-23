@@ -12,7 +12,7 @@ class Login extends Component {
 		};
 	}
 
-	handleSubmitClick = () => {
+	handleSubmitClick = e => {
 		let json_str = this.getCookie("authorisedUser");
 		let authorisedUser = JSON.parse(json_str);
 		console.log(authorisedUser, "jk");
@@ -27,6 +27,7 @@ class Login extends Component {
 		} else {
 			alert("Either username or password doen't match");
 		}
+		e.preventDefault();
 	};
 
 	getCookie = cname => {
@@ -69,37 +70,35 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="page-login">
-				<h4 className="text-center">Login</h4>
 				<div>
-					<form>
-						<input
-							type="email"
-							value={this.state.username}
-							onChange={e => this.handleUserName(e)}
-							placeholder="Enter email"
-							required
-						/>
-						<input
-							type="password"
-							value={this.state.password}
-							onChange={e => this.handlePassword(e)}
-							placeholder="Enter username"
-							required
-						/>
-						<button
-							type="submit"
-							className="btn btn-primary mb-5"
-							onClick={() => this.handleSubmitClick()}
-						>
-							Submit
-						</button>
-						<span className="text-center mt-5">
-							Not registered yet?{" "}
-							<Link href="/signup">
-								<a>Signup here</a>
-							</Link>
-						</span>
-					</form>
+					<div className="text-center mb-5">Login</div>
+					<div className="mt-5">
+						<form onSubmit={e => this.handleSubmitClick(e)}>
+							<input
+								type="email"
+								value={this.state.username}
+								onChange={e => this.handleUserName(e)}
+								placeholder="Enter email"
+								required
+							/>
+							<input
+								type="password"
+								value={this.state.password}
+								onChange={e => this.handlePassword(e)}
+								placeholder="Enter username"
+								required
+							/>
+							<button type="submit" className="btn btn-primary mb-5">
+								Submit
+							</button>
+						</form>
+					</div>
+					<div className="text-center m-5 text-dark">
+						Not registered yet?{" "}
+						<Link href="/signup">
+							<a> Signup here </a>
+						</Link>
+					</div>
 				</div>
 			</div>
 		);

@@ -41,10 +41,8 @@ export default class signup extends Component {
 	handleSubmitClick = () => {
 		if (
 			this.state.password.trim().length > 0 &&
-			this.state.password !== this.state.confirmPassword
+			this.state.password === this.state.confirmPassword
 		) {
-			alert("Retype password doesn't match");
-		} else {
 			let authorisedUser = [
 				{ username: this.state.userName, password: this.state.password }
 			];
@@ -52,7 +50,12 @@ export default class signup extends Component {
 			this.setCookie("authorisedUser", json_str, 365);
 			alert("User created successfully");
 			Router.replace("/login");
+		} else if (this.state.userName.trim().length === 0) {
+			alert("Email is required");
+		} else {
+			alert("Retype password doesn't match");
 		}
+		e.preventDefault();
 	};
 
 	setCookie = (cname, cvalue, exdays) => {
@@ -67,7 +70,7 @@ export default class signup extends Component {
 			<div className="page-signup">
 				<div className="form-container">
 					<h4>Register</h4>
-					<form>
+					<form onSubmit={() => this.handleSubmitClick()}>
 						<input
 							type="text"
 							value={this.state.firstName}
@@ -103,11 +106,7 @@ export default class signup extends Component {
 							placeholder="Retype Password"
 							required
 						/>
-						<button
-							type="submit"
-							className="btn btn-primary"
-							onClick={() => this.handleSubmitClick()}
-						>
+						<button type="submit" className="btn btn-primary">
 							Submit
 						</button>
 					</form>
