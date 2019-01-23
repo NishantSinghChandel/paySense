@@ -1,0 +1,24 @@
+{
+  "name": "assignment",
+  "version": "0.0.1",
+  "author": "Nishant Singh <realnishantsingh@gmail.com>",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^7.0.2",
+    "node-sass": "^4.9.4",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-lazyload": "^2.3.0",
+    "react-redux": "^6.0.0",
+    "react-responsive-modal": "^3.5.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0"
+  }
+}

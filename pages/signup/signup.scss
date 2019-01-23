@@ -1,0 +1,46 @@
+.page-signup{
+        .form-container{
+            display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height:90vh;
+        > form{
+            background:salmon;
+            width:300px;
+            padding:20px;
+            border-radius:10px;
+            border:1px solid gainsboro;
+            display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+            input{
+                width:100%;
+                margin-bottom:20px;
+                border-radius:100px;
+                padding:10px;
+                border:0;
+                outline:none;
+            }
+            button{
+                padding:10px;
+                border-radius:4px;
+                width:100%;
+                border:0;
+                background:rgba(#fff,0.5);
+                cursor:pointer;
+                transition:all 0.3s;
+                &:focus{
+                    outline:none;
+                }
+                &:hover{
+                    background:black;
+                    color:white;
+                }
+            }
+    
+        }
+        }
+        
+    } 
