@@ -15,7 +15,6 @@ class Login extends Component {
 	handleSubmitClick = e => {
 		let json_str = this.getCookie("authorisedUser");
 		let authorisedUser = JSON.parse(json_str);
-		console.log(authorisedUser, "jk");
 		let validUser = authorisedUser.some(data => {
 			return (
 				data.username === this.state.username &&
