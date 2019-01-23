@@ -88,18 +88,18 @@ class Login extends Component {
 						/>
 						<button
 							type="submit"
-							className="btn btn-primary"
+							className="btn btn-primary mb-5"
 							onClick={() => this.handleSubmitClick()}
 						>
 							Submit
 						</button>
+						<span className="text-center mt-5">
+							Not registered yet?{" "}
+							<Link href="/signup">
+								<a>Signup here</a>
+							</Link>
+						</span>
 					</form>
-				</div>
-				<div className="text-center">
-					Not registered yet?{" "}
-					<Link href="/signup">
-						<a>Signup here</a>
-					</Link>
 				</div>
 			</div>
 		);
