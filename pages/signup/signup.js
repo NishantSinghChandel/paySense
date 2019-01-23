@@ -38,7 +38,7 @@ export default class signup extends Component {
 			confirmPassword: e.target.value
 		});
 	};
-	handleSubmitClick = () => {
+	handleSubmitClick = e => {
 		if (
 			this.state.password.trim().length > 0 &&
 			this.state.password === this.state.confirmPassword
@@ -70,7 +70,7 @@ export default class signup extends Component {
 			<div className="page-signup">
 				<div className="form-container">
 					<h4>Register</h4>
-					<form onSubmit={() => this.handleSubmitClick()}>
+					<form onSubmit={e => this.handleSubmitClick(e)}>
 						<input
 							type="text"
 							value={this.state.firstName}
