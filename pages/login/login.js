@@ -69,7 +69,7 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="page-login">
-				<h4>Login</h4>
+				<h4 className="text-center">Login</h4>
 				<div>
 					<form>
 						<input
@@ -95,10 +95,12 @@ class Login extends Component {
 						</button>
 					</form>
 				</div>
-				Not registered yet?{" "}
-				<Link href="/signup">
-					<a>Signup here</a>
-				</Link>
+				<div className="text-center">
+					Not registered yet?{" "}
+					<Link href="/signup">
+						<a>Signup here</a>
+					</Link>
+				</div>
 			</div>
 		);
 	}
