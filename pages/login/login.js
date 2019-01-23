@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./login.scss";
 import { connect } from "react-redux";
+import Link from "next/link";
 import Router from "next/router";
 class Login extends Component {
 	constructor() {
@@ -68,29 +69,36 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="page-login">
-				<form>
-					<input
-						type="email"
-						value={this.state.username}
-						onChange={e => this.handleUserName(e)}
-						placeholder="Enter email"
-						required
-					/>
-					<input
-						type="password"
-						value={this.state.password}
-						onChange={e => this.handlePassword(e)}
-						placeholder="Enter username"
-						required
-					/>
-					<button
-						type="submit"
-						className="btn btn-primary"
-						onClick={() => this.handleSubmitClick()}
-					>
-						Submit
-					</button>
-				</form>
+				<h4>Login</h4>
+				<div>
+					<form>
+						<input
+							type="email"
+							value={this.state.username}
+							onChange={e => this.handleUserName(e)}
+							placeholder="Enter email"
+							required
+						/>
+						<input
+							type="password"
+							value={this.state.password}
+							onChange={e => this.handlePassword(e)}
+							placeholder="Enter username"
+							required
+						/>
+						<button
+							type="submit"
+							className="btn btn-primary"
+							onClick={() => this.handleSubmitClick()}
+						>
+							Submit
+						</button>
+					</form>
+				</div>
+				Not registered yet?{" "}
+				<Link href="/signup">
+					<a>Signup here</a>
+				</Link>
 			</div>
 		);
 	}
